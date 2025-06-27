@@ -102,3 +102,106 @@
     font-size: 12px;
   }
 }
+
+/* Tic Tac Toe Minimalistic Styles */
+.ttt-title {
+  font-weight: 800;
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  margin: 24px 0 10px 0;
+}
+.ttt-controls {
+  margin-bottom: 20px;
+}
+.ttt-btn, .ttt-btn-new {
+  background: var(--button-bg, #1976d2);
+  color: var(--button-text, #fff);
+  border: none;
+  border-radius: 7px;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  margin: 5px 0;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s, transform 0.1s;
+}
+.ttt-btn:active, .ttt-btn-new:active {
+  background: var(--text-secondary, #0056b3);
+  transform: scale(0.98);
+}
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  grid-template-rows: repeat(3, 64px);
+  gap: 8px;
+  justify-content: center;
+  margin: 27px 0 18px 0;
+  background: none;
+}
+.ttt-square {
+  width: 64px;
+  height: 64px;
+  background: var(--bg-secondary, #f8f9fa);
+  color: var(--accent, #1976d2);
+  border: 2px solid var(--border-color, #e9ecef);
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(30,30,45,0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ttt-square:disabled, .ttt-square[disabled] {
+  background: var(--border-color, #e9ecef);
+  color: #b0b0b0;
+  cursor: not-allowed;
+}
+.ttt-status, .ttt-winner {
+  margin: 14px 0 8px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary, #282c34);
+}
+.ttt-winner {
+  color: var(--accent, #ffeb3b);
+  font-size: 1.4rem;
+  margin: 6px 0 9px 0;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.13);
+}
+.ttt-error {
+  color: #e87a41;
+  background: #fff1e6;
+  border: 1px solid #ffd6bd;
+  padding: 8px 10px;
+  border-radius: 7px;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  max-width: 350px;
+  display: inline-block;
+}
+.ttt-footer {
+  color: var(--text-secondary, rgba(255,255,255,0.7));
+  margin-top: 34px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Board responsiveness */
+@media (max-width: 500px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, 45px);
+    grid-template-rows: repeat(3, 45px);
+    gap: 6px;
+  }
+  .ttt-square {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+}
